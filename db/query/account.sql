@@ -1,4 +1,4 @@
--- name: CreateAuthor :one
+-- name: CreateAccount :one
 INSERT INTO accounts (owner, balance, currency)
 VALUES ($1, $2, $3)
 RETURNING *;
@@ -9,7 +9,7 @@ FROM accounts
 WHERE id = $1
 LIMIT 1;
 
--- name: ListAuthors :many
+-- name: ListAccounts :many
 SELECT *
 FROM accounts
 ORDER BY id
